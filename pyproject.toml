@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "maze"
+version = "0.1.0"
+description = "An OpenCV project that detects a maze drawn on a whiteboard and solves it"
+authors = ["Antonio De Lucreziis <antonio.delucreziis@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+dt-apriltags = "^3.1.7"
+numpy = "^2.0.1"
+apriltag = "^0.0.16"
+opencv-python = "^4.10.0.84"
+networkx = "^3.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
