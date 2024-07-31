@@ -1,8 +1,8 @@
 # OpenCV Maze Solver
 
 <p align="center">
-<img src="images/IMG_0867.jpg" width="50%" />   
-<img src="images/solved.png" width="50%" />   
+<img src="images/IMG_0867.jpg" width="45%" />   
+<img src="images/solved.png" width="45%" />   
 </p>
 
 This is a simple maze solver using OpenCV and Python. The maze is solved using the A* algorithm from the NetworkX library.
