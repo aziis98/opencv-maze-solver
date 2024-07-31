@@ -26,6 +26,7 @@ def display_image(label, image, default_width: int = 800, default_height: int = 
     cv2.namedWindow(label, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(label, default_width, default_height)
     cv2.imshow(label, image)
+    cv2.imwrite(f"debug-steps/{len(WINDOW_LABELS):03}_{label}.png", image)
 
 
 def wait_frame():
