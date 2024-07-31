@@ -2,7 +2,7 @@
 
 <p align="center">
 <img src="images/IMG_0867.jpg" width="300" />   
-<img src="images/IMG_0867_solved.jpg" width="300" />   
+<img src="images/solved.png" width="300" />   
 </p>
 
 This is a simple maze solver using OpenCV and Python. The maze is solved using the A* algorithm from the NetworkX library.
