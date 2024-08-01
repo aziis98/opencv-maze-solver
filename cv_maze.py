@@ -53,13 +53,13 @@ def solve_maze(image, debug=False):
         # cv2.fillPoly(image, [np.int32(r.corners)], (0, 0, 0))
 
     # erode the image
-    eroded = cv2.erode(normalized_image, np.ones((7, 7), np.uint8))
+    eroded = cv2.erode(normalized_image, np.ones((9, 9), np.uint8))
     # eroded = cv2.GaussianBlur(eroded, (15, 15), 0)
 
     debug_image("Eroded", eroded)
 
     # binarize the image
-    _, thresh = cv2.threshold(eroded, 150, 255, cv2.THRESH_BINARY)
+    _, thresh = cv2.threshold(eroded, 200, 255, cv2.THRESH_BINARY)
     thresh = cv2.bitwise_not(thresh)
 
     debug_image("Threshold", thresh)

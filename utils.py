@@ -4,11 +4,20 @@ import time
 
 import numpy as np
 
-import dt_apriltags
 from dt_apriltags import Detector, Detection
 
 
+from threading import Timer
+
 WINDOW_LABELS = set()
+
+
+def move_window(label, x, y):
+    """
+    Move the window with the given label to the given position
+    """
+
+    cv2.moveWindow(label, x, y)
 
 
 def display_image(label, image, default_width: int = 800, default_height: int = 600, interpolation: int = cv2.INTER_LINEAR):
@@ -22,11 +31,15 @@ def display_image(label, image, default_width: int = 800, default_height: int = 
         new_width = default_height * width // height
         image = cv2.resize(image, (new_width, default_height), interpolation=interpolation)
 
-    WINDOW_LABELS.add(label)
     cv2.namedWindow(label, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(label, default_width, default_height)
     cv2.imshow(label, image)
-    cv2.imwrite(f"debug-steps/{len(WINDOW_LABELS):03}_{label}.png", image)
+
+    if label not in WINDOW_LABELS:
+        cv2.imwrite(f"debug-steps/{len(WINDOW_LABELS)+1:03}_{label}.png", image)
+        Timer(5.0, move_window, args=(label, 0, 0)).start()
+
+    WINDOW_LABELS.add(label)
 
 
 def wait_frame():
