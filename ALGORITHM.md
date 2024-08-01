@@ -2,7 +2,7 @@
 
 1. **Load**. 
 
-    First we load the image
+    First we load the image. At this stage we convert the image to gray scale and run _AprilTag detection_ to find all the markers.
 
     <img src="debug-steps/001_Image_w500.png" alt="step 1 - image" width="500">
 
@@ -44,7 +44,7 @@
 
 8. **Bitmap**.
 
-    We create a bitmap of the maze to use it in the A* algorithm. The bitmap is a 2D array where 0 is a free cell and 1 is a wall. We use networkx to run the A* algorithm.
+    We create a bitmap of the maze where 0 is a free cell and 1 is a wall. Then we convert it to a NetworkX graph and run the A* algorithm.
 
     <img src="debug-steps/008_Maze Bitmap_w500.png" alt="step 8 - maze bitmap" width="500">
 
